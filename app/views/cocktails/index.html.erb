@@ -1,0 +1,17 @@
+<%# cards %>
+<div class="container">
+<h1>Cocktails</h1>
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+        <div class="card">
+        <%= image_tag "mojito.jpg", class:"card-img-top", alt:"imagem mojito" %>
+          <%# <img src="/assets/images/mojito.jpg" class="card-img-top" alt="imagem mojito"> %>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to cocktail.name, cocktail %></h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

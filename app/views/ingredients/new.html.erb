@@ -1,0 +1,19 @@
+<div class="container">
+  <%= simple_form_for(@ingredient) do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit, class:'btn btn-primary' %>
+  <% end %>
+</div>
+<br>
+<div class="container">
+<table>
+  <% @ingredients.each do |ingredient|%>
+  <tr>
+    <td><%= ingredient.name%></td>
+    <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <% end %>
+  </tr>
+<br>
+<%= link_to "Back to Cocktails", cocktails_path%>
+</div>
+
