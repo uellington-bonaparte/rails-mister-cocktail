@@ -7,8 +7,9 @@
   <% @cocktails.each do |cocktail| %>
       <div class="col-sm-12 col-md-6 col-lg-4 my-2">
         <div class="card">
+        <% if cocktail.photo.attached? %>
           <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :scale, class:"card-img-top", alt:"imagem mojito" %>
-
+        <% end%>
           <div class="card-body">
             <h5 class="card-title"><%= link_to cocktail.name, cocktail %></h5>
           </div>
