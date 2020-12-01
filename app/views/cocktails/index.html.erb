@@ -1,9 +1,9 @@
 <%# cards %>
 <div class="container">
-<h1>Cocktails</h1>
+  <h1>Cocktails</h1>
+  <% @cocktails.each do |cocktail| %>
   <div class="row">
-    <% @cocktails.each do |cocktail| %>
-      <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+      <div class="col-sm-12 col-md-6 col-lg-4 ">
         <div class="card">
         <%= image_tag "mojito.jpg", class:"card-img-top", alt:"imagem mojito" %>
           <%# <img src="/assets/images/mojito.jpg" class="card-img-top" alt="imagem mojito"> %>
@@ -13,5 +13,6 @@
         </div>
       </div>
     <% end %>
-  </div>
+    </div>
+      <p> <%= link_to "Add New Cocktail", new_cocktail_path%></p>
 </div>
