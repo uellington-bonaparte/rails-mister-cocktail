@@ -15,7 +15,7 @@
   </table>
       <br>
       <%= link_to "Add Ingredients", new_cocktail_dose_path(@cocktail)%>
-      <td><%= link_to 'Delete', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to "Delete Cocktail", cocktail_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       <%= link_to "Back to Cocktails", cocktails_path %>
 </div>

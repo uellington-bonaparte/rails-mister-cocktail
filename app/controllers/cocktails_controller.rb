@@ -1,10 +1,12 @@
 class CocktailsController < ApplicationController
+  before_action :set_cocktail, only: %i[show delete]
+
   def index
     @cocktails = Cocktail.all
   end
 
   def show
-    @cocktail = Cocktail.find(params[:id])
+    # @cocktail = Cocktail.find(params[:id])
   end
 
   def new
@@ -21,9 +23,20 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def destroy
+    @cocktail = Cocktail.find(params[:id])
+    @cocktail.destroy
+
+    redirect_to cocktails_path, notice: "#{@cocktail.name} was successfully deleted."
+  end
+
   private
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
+  end
+
+  def set_cocktail
+    @cocktail = Cocktail.find(params[:id])
   end
 end
