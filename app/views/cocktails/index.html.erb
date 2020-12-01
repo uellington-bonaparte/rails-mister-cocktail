@@ -1,12 +1,14 @@
 <%# cards %>
 <div class="container">
   <h1>Cocktails</h1>
-  <% @cocktails.each do |cocktail| %>
+  <p> <%= link_to "Add New Cocktail", new_cocktail_path %></p>
+  <br>
   <div class="row">
-      <div class="col-sm-12 col-md-6 col-lg-4 ">
+  <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-12 col-md-6 col-lg-4 my-2">
         <div class="card">
-        <%= image_tag "mojito.jpg", class:"card-img-top", alt:"imagem mojito" %>
-          <%# <img src="/assets/images/mojito.jpg" class="card-img-top" alt="imagem mojito"> %>
+          <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :scale, class:"card-img-top", alt:"imagem mojito" %>
+
           <div class="card-body">
             <h5 class="card-title"><%= link_to cocktail.name, cocktail %></h5>
           </div>
@@ -14,5 +16,5 @@
       </div>
     <% end %>
     </div>
-      <p> <%= link_to "Add New Cocktail", new_cocktail_path%></p>
 </div>
+
