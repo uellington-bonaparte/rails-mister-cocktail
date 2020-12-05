@@ -6,5 +6,6 @@ class Cocktail < ApplicationRecord
   # A cocktail has many ingredients through doses
   has_many :ingredients, through: :doses
 
+  has_many :pedidos
   validates :name, presence: true, uniqueness: true
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :doses, only: %i[new create destroy]
   end
 
+  resources :pedidos
   resources :ingredients, only: %i[new create destroy]
   # A user can see the list of cocktails: GET "cocktails"
   # A user can see the details of a given cocktail, with the dose needed for each ingredient: GET "cocktails/42"

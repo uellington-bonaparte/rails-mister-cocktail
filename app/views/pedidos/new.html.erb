@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for [@cocktail, @pedido] do |f| %>
+    <%= f.input :mesa %>
+    <%= f.association :cocktail %>
+    <%= f.input :quantidade %>
+
+    <%= f.button :submit, class:'btn btn-primary' %>
+  <% end %>
+</div>
